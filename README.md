@@ -93,7 +93,3 @@ FIDNet/
 `-- README.md
 ```
 
-## Acknowledgements
-
-- The diffusion implementation is built on code derived from [lucidrains/denoising-diffusion-pytorch](https://github.com/lucidrains/denoising-diffusion-pytorch)
-- The README layout style was organized with reference to [lhfgghc/LLVE-AMNet](https://github.com/lhfgghc/LLVE-AMNet), while the environment and usage instructions here were written according to this repository
