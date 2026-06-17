@@ -1,14 +1,35 @@
-# FIDNet
+<h1 align="center">FIDNet</h1>
 
-FIDNet is a frequency-guided diffusion model for image restoration. The repository contains the training and testing entry scripts together with the model and dataset code used by the project.
+<p align="center">
+  Frequency-guided diffusion model for image restoration.
+</p>
 
-## Network Architecture
+<p align="center">
+  This repository contains the training script, testing script, model implementation, and dataset pipeline used in FIDNet.
+</p>
+
+## Tables of Contents
+
+- [Framework](#framework)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Acknowledgements](#acknowledgements)
+
+## Framework
 
 ![FIDNet architecture](./fidnet_architecture.png)
 
-## Environment
+FIDNet combines frequency-domain feature extraction with a residual denoising diffusion process for image restoration. The implementation in this repository includes:
 
-The dependency list below is written from the current codebase rather than copied from another project.
+- a frequency-domain branch with binary transformation modules
+- an adaptive Fourier filtering block
+- a residual denoising diffusion model for restoration in the image domain
+
+## Installation
+
+The environment description below is written according to the actual imports used in this repository.
+
+### Requirements
 
 - Python 3.8 or newer
 - PyTorch
@@ -23,52 +44,50 @@ The dependency list below is written from the current codebase rather than copie
 - Augmentor
 - lmdb
 
-You can create an environment with `conda` or `venv`, then install the packages with `pip`.
-
-Example:
+You can create a `conda` environment or a `venv`, then install the dependencies with `pip`.
 
 ```bash
 pip install torch torchvision accelerate einops ema-pytorch pillow numpy opencv-python tqdm Augmentor lmdb
 ```
 
-## Dataset Preparation
+## Getting Started
 
-Before running the scripts, update the dataset paths in [train.py](/G:/FIDNet/train.py) and [test.py](/G:/FIDNet/test.py) to match your local data layout.
+### Dataset Preparation
 
-The current code uses paired paths for conditional restoration:
+Before running the code, update the dataset paths in [train.py](/G:/FIDNet/train.py) and [test.py](/G:/FIDNet/test.py) so they match your local data locations.
 
-- training ground-truth images
-- training degraded/input images
-- validation or test output directory / paired test paths
+The current implementation uses paired paths for conditional restoration, including:
 
-Please make sure the paths assigned to `folder` in both scripts point to your own dataset folders.
+- ground-truth images
+- degraded or input images
+- validation or testing paths
 
-## Training
+The dataset-related code is located in [datasets](/G:/FIDNet/datasets).
 
-Training only needs:
+### Training
+
+Training only requires:
 
 ```bash
 python train.py
 ```
 
-Optional:
+You can also optionally pass the number of sampling timesteps:
 
 ```bash
 python train.py 10
 ```
 
-The optional argument sets `sampling_timesteps`.
-
 Notes:
 
-- `train.py` currently fixes `CUDA_VISIBLE_DEVICES=0`
-- the default training configuration uses `image_size=256`
-- checkpoints and sampled results are saved under `./results`
-- the script currently resumes from `trainer.load(60)`, so adjust or remove that line if you want to start from scratch
+- `train.py` sets `CUDA_VISIBLE_DEVICES=0`
+- the default image size is `256`
+- checkpoints and sampled outputs are saved under `./results`
+- the current script resumes from `trainer.load(60)`, so modify or remove that line if you want to start from scratch
 
-## Testing
+### Testing
 
-Testing only needs:
+Testing only requires:
 
 ```bash
 python test.py
@@ -76,16 +95,16 @@ python test.py
 
 Notes:
 
-- `test.py` also fixes `CUDA_VISIBLE_DEVICES=0`
-- the script currently loads checkpoint `trainer.load(100)`
-- test outputs are written to the folder set by `trainer.set_results_folder(...)`
-- update the test dataset paths in `test.py` before running
+- `test.py` sets `CUDA_VISIBLE_DEVICES=0`
+- the current script loads checkpoint `trainer.load(100)`
+- output images are saved to the folder set by `trainer.set_results_folder(...)`
+- update the testing dataset paths in `test.py` before running
 
-## Repository Structure
+### Repository Structure
 
 ```text
 FIDNet/
-|-- datasets1/
+|-- datasets/
 |-- src/
 |-- train.py
 |-- test.py
@@ -93,3 +112,7 @@ FIDNet/
 `-- README.md
 ```
 
+## Acknowledgements
+
+- The diffusion implementation is built on code derived from [lucidrains/denoising-diffusion-pytorch](https://github.com/lucidrains/denoising-diffusion-pytorch)
+- The README organization is inspired by [lhfgghc/LLVE-AMNet](https://github.com/lhfgghc/LLVE-AMNet), while the environment and usage instructions here are based on this repository itself

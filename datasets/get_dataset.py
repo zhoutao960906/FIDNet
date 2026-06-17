@@ -1,7 +1,7 @@
 import argparse
 
-from datasets1.base import Dataset
-from datasets1.generation import get_dataset
+from datasets.base import Dataset
+from datasets.generation import get_dataset
 
 
 def dict2namespace(config):
