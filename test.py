@@ -37,17 +37,15 @@ else:
 
 if condition:
     if input_condition:
-        folder = ["/home/liu/disk12t/liu_data/shadow_removal_with_val_dataset/ISTD_Dataset_arg/data_val/ISTD_shadow_free_train.flist",
-                "/home/liu/disk12t/liu_data/shadow_removal_with_val_dataset/ISTD_Dataset_arg/data_val/ISTD_shadow_train.flist",
-                "/home/liu/disk12t/liu_data/shadow_removal_with_val_dataset/ISTD_Dataset_arg/data_val/ISTD_mask_train.flist",
-                "/home/liu/disk12t/liu_data/shadow_removal_with_val_dataset/ISTD_Dataset_arg/data_val/ISTD_shadow_free_test.flist",
-                "/home/liu/disk12t/liu_data/shadow_removal_with_val_dataset/ISTD_Dataset_arg/data_val/ISTD_shadow_test.flist",
-                "/home/liu/disk12t/liu_data/shadow_removal_with_val_dataset/ISTD_Dataset_arg/data_val/ISTD_mask_test.flist"]
+        folder = ["path to ground truth of train data",
+                "path to input of train data",
+                "path to ground truth of valid data",
+                "path to input of valid data"]
     else:
-        folder = ["/seu_share/home/230239507/test_dataset/test_gt_1.5/",
-                "/seu_share/home/230239507/test_dataset/ningbo",
-                # "/seu_share/home/230239507/test_dataset/test_gt_1.5/",
-                "/seu_share/home/230239507/test_dataset/ningbo/"]
+        folder = ["path to ground truth of train data",
+                "path to input of train data",
+                "path to ground truth of valid data",
+                "path to input of valid data"]
     train_batch_size = 1
     num_samples = 1
     sum_scale = 1

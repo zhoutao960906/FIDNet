@@ -54,7 +54,7 @@ pip install torch torchvision accelerate einops ema-pytorch pillow numpy opencv-
 
 ### Dataset Preparation
 
-Before running the code, update the dataset paths in [train.py](/G:/FIDNet/train.py) and [test.py](/G:/FIDNet/test.py) so they match your local data locations.
+Before running the code, update the dataset paths in [train.py](./train.py) and [test.py](./test.py) so they match your local data locations.
 
 The current implementation uses paired paths for conditional restoration, including:
 
@@ -62,7 +62,7 @@ The current implementation uses paired paths for conditional restoration, includ
 - degraded or input images
 - validation or testing paths
 
-The dataset-related code is located in [datasets](/G:/FIDNet/datasets).
+The dataset-related code is located in [datasets](./datasets).
 
 ### Training
 

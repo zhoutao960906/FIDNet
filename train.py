@@ -37,21 +37,21 @@ else:
 
 if condition:
     if input_condition:
-        folder = ["/seu_share/home/230239507/train_gt/",
-                "/seu_share/home/230239507/train_input/",
-                # "/home/zhoutao/tmp/RDDM-main/RDDM-main/data/valid_gt/",
-                "/seu_share/home/230239507/val_output_img/"]
+        folder = ["path to ground truth of train data",
+                "path to input of train data",
+                "path to ground truth of valid data",
+                "path to input of valid data"]
     else:
-        folder = ["/seu_share/home/230239507/train_gt/",
-                "/seu_share/home/230239507/train_input/",
-                # "/home/zhoutao/tmp/RDDM-main/RDDM-main/data/valid_gt/",
-                "/seu_share/home/230239507/val_output_img/"]
+        folder = ["path to ground truth of train data",
+                "path to input of train data",
+                "path to ground truth of valid data",
+                "path to input of valid data"]
     train_batch_size = 4
     num_samples = 1
     sum_scale = 1
     image_size = 256
 else:
-    folder = '/seu_share/home/230239507/train_gt'
+    folder = 'path to ground truth of train data'
     train_batch_size = 4
     num_samples = 25
     sum_scale = 1
