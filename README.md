@@ -1,7 +1,7 @@
-<h1 align="center">FIDNet</h1>
+<h1 align="center">FIDNet: Frequency-Informed Diffusion Network for Low-Field MRI Enhancement</h1>
 
 <p align="center">
-  Frequency-guided diffusion model for image restoration.
+  A frequency-informed diffusion framework for low-field MRI enhancement.
 </p>
 
 <p align="center">
