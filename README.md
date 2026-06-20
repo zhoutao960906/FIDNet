@@ -58,10 +58,10 @@ Before running the code, update the dataset paths in [train.py](./train.py#L40) 
 
 The current implementation uses paired paths for both training and validation or testing. Please set the four paths in the following order:
 
-- ground-truth training paths
-- input training paths
-- ground-truth validation or testing paths
-- input validation or testing paths
+- `path to ground truth of training data`
+- `path to input of training data`
+- `path to ground truth of validation or testing data`
+- `path to input of validation or testing data`
 
 The dataset-related code is located in [datasets](./datasets).
 

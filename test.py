@@ -39,13 +39,13 @@ if condition:
     if input_condition:
         folder = ["path to ground truth of train data",
                 "path to input of train data",
-                "path to ground truth of valid data",
-                "path to input of valid data"]
+                "path to ground truth of test data",
+                "path to input of test data"]
     else:
         folder = ["path to ground truth of train data",
                 "path to input of train data",
-                "path to ground truth of valid data",
-                "path to input of valid data"]
+                "path to ground truth of test data",
+                "path to input of test data"]
     train_batch_size = 1
     num_samples = 1
     sum_scale = 1
